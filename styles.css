@@ -1,0 +1,111 @@
+*{
+    font-family: monospace;
+}
+body{
+    margin: 0;
+}
+header{
+    color: white;
+    height: 100vh;
+    background-color:pink;
+    background-position: center;
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    
+}
+button{
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+.button:hover{
+    color: white;
+    background-color: darkblue;
+}
+header h1{
+    text-align: center;
+    margin: 0;
+    justify-content: baseline;
+    align-items: center;
+}
+img{
+    height: 200px;
+}
+section{
+    height: 100vh;
+}
+div{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.abo{
+    min-width: 100vh;
+    text-align: center;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+.abo h1{
+    color: blue;
+}
+.anu{
+    min-width: 100vh;
+    text-align: center;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+.anu h1{
+    color: blue;
+}
+.chai{
+    min-width: 100vh;
+    text-align: center;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+.chai h1{
+    color: blue;
+}
+.rey{
+    min-width: 100vh;
+    text-align: center;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+
+}
+.hi{
+    min-width: 100vh;
+    text-align: center;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+.rey h1{
+    color: blue;
+}
+.rey h3{
+    color: blue;
+}
+.la:hover{
+    color:white;
+    background: darkblue;
+
+}
+.pa:hover{
+    background-color: blue;
+}
