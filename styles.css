@@ -109,3 +109,6 @@ div{
 .pa:hover{
     background-color: blue;
 }
+@media (max-width: 768px){
+    h1{
+        font-size:24px;
