@@ -1,4 +1,6 @@
 *{
+    margin:0;
+    padding:0;
     font-family: monospace;
 }
 body{
@@ -48,7 +50,7 @@ div{
     gap: 10px;
 }
 .abo{
-    min-width: 100vh;
+    min-width: 100%;
     text-align: center;
     margin: 10px 0;
     flex-direction: column;
@@ -59,7 +61,7 @@ div{
     color: blue;
 }
 .anu{
-    min-width: 100vh;
+    min-width: 100%;
     text-align: center;
     margin: 10px 0;
     flex-direction: column;
@@ -70,7 +72,7 @@ div{
     color: blue;
 }
 .chai{
-    min-width: 100vh;
+    min-width: 100%;
     text-align: center;
     margin: 10px 0;
     flex-direction: column;
@@ -81,7 +83,7 @@ div{
     color: blue;
 }
 .rey{
-    min-width: 100vh;
+    min-width: 100%;
     text-align: center;
     margin: 10px 0;
     flex-direction: column;
@@ -90,7 +92,7 @@ div{
 
 }
 .hi{
-    min-width: 100vh;
+    min-width: 100%;
     text-align: center;
     margin: 10px 0;
     flex-direction: column;
