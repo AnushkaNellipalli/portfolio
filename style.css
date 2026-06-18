@@ -1,4 +1,4 @@
-#countlabel{
+/*countlabel{
     display: block;
     text-align: center;
     font-size: 10em;
@@ -17,4 +17,16 @@
 }
 .button:hover{
     background-color: rgb(20, 20, 214);
+}*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#mybutton{
+    font-size: 3em;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+.labels{
+    font-size: 3em;
 }
