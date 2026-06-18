@@ -88,7 +88,7 @@ reset.onclick=function(){
 let max=100
 let randomnum=Math.floor(Math.random()*(max-min))+min
 console.log(randomnum)*/
-const mybutton=document.getElementById("mybutton")
+/*const mybutton=document.getElementById("mybutton")
 // const mylabel=document.getElementById("mylabel")
 const mylabel1=document.getElementById("mylabel1")
 const mylabel2=document.getElementById("mylabel2")
@@ -108,6 +108,59 @@ mybutton.onclick=function(){
     mylabel1.textContent=randomnum1
     mylabel2.textContent=randomnum2
     mylabel3.textContent=randomnum3
+}*/
+/*let age=13
+if(age>=18){
+    console.log("your eligible")
 }
+else{
+    console.log("you not eligible")
+}*/
+/*let time=9
+if(time<12){
+    console.log("good morning")
+}else{
+    console.log("good afternoon")
+}*/
+/*let student=false
+if(student){
+    console.log("you are a student")
+}else{
+    console.log("you are not a student")
+}*/
+/*let age=18
+let license=true
+if(age>=16){
+    console.log("your old enough")
+    if(license){
+        console.log("you have your licence")
+    }
+    else{
+        console.log("you dont")
+    }
+}else{
+    console.log("you are not 16 ")
+}*/
+const mytext=document.getElementById("mytext")
+const mysubmit=document.getElementById("mysubmit")
+const result=document.getElementById("result")
+let age
+mysubmit.onclick=function(){
+    age=mytext.value
+    age=Number(age)
+    if(age>=100){
+        result.textContent=`your to old to enter this site`
+    }
+    else if(age==0){ 
+        result.textContent=`you cant enter. you just born`
+    }
+    else if(age>=18){
+        console.log("you old enough to enter this site")
+        result.textContent=`you old enough to enter this site`
 
-
+    }
+    else{
+        console.log("you must be 18+ enter this site")
+        result.textContent=`you must be 18+ enter this site`
+    }
+}
