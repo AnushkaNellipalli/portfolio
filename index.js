@@ -141,7 +141,7 @@ if(age>=16){
 }else{
     console.log("you are not 16 ")
 }*/
-const mytext=document.getElementById("mytext")
+/*const mytext=document.getElementById("mytext")
 const mysubmit=document.getElementById("mysubmit")
 const result=document.getElementById("result")
 let age
@@ -155,12 +155,133 @@ mysubmit.onclick=function(){
         result.textContent=`you cant enter. you just born`
     }
     else if(age>=18){
-        console.log("you old enough to enter this site")
         result.textContent=`you old enough to enter this site`
 
     }
     else{
-        console.log("you must be 18+ enter this site")
         result.textContent=`you must be 18+ enter this site`
     }
+}*/
+/*const mycheckbox=document.getElementById("mycheckbox")
+const master=document.getElementById("master")
+const visa=document.getElementById("visa")
+const pay=document.getElementById("pay")
+const mysubmit=document.getElementById("mysubmit")
+const subresult=document.getElementById("subresult")
+const payresult=document.getElementById("payresult")
+mysubmit.onclick=function(){
+    if(mycheckbox.checked){
+        subresult.textContent=`you are subscribed`
+    }
+    else{
+        subresult.textContent=`you are not subscribed`
+    }
+    if(visa.checked){
+        payresult.textContent=`your paying with visa`
+    }
+    else if(master.checked){
+        payresult.textContent=`your paying with mastercard`
+    }
+    else if(pay.checked){
+        payresult.textContent=`your paying with paypaul`
+
+    }
+    else{
+        payresult.textContent=`you must selsct a payment type`
+
+    }
+}*/
+/*let age=18
+let m=age>=18 ? "your an adulit" : "your a minor"
+console.log(m)*/
+/*let age=26
+let m=age>=18? "your are major":"your minor"
+console.log(m)*/
+/*let day="pizza"
+switch(day){
+    case 1:
+        console.log("its monday")
+        break
+    case 2:
+        console.log("its tuesday")
+        break
+    case 3:
+        console.log("its wednesday")
+        break
+    case 4:
+        console.log("its thursday")
+        break
+    case 5:
+        console.log("its friday")
+        break
+    default:
+        console.log(`${day} is not day`)
+        break
+}*/
+/*const full="bro code"
+let first=full.slice(0,full.indexOf(" "))br
+let last=full.slice(full.indexOf(" "))
+console.log(first)
+console.log(last)*/
+/*let username=window.prompt("enter your name")
+username=username.trim()
+let letter=username.charAt(0)
+letter=letter.toUpperCase()
+let extension=username.slice(1)
+extension=extension.toLowerCase()
+username=letter+extension
+console.log(username)*/
+/*let username=window.prompt("enter your ysarename")
+username=username.trim().charAt(0).toUpperCase()+username.trim().slice(1).toLowerCase()
+console.log(username)*/
+/*const min=50
+const max=100
+const ans=Math.floor(Math.random()*(max-min+1))+min
+let attempt=0
+let guess
+let running=true
+while(running){
+    guess=window.prompt(`guess the num bet ${min}-${max}`)
+    guess=Number(guess)
+    if(isNaN(guess)){
+        window.alert("please eneter a valid num")
+    }
+    else if(guess<min||guess>max){
+        window.alert("enter a vlalid num")
+    }
+    else{
+        attempt++
+        if(guess<ans){
+            window.alert("too low try again")
+        }
+        else if(guess>ans){
+            window.alert("too high try again")
+        }
+        else{
+            window.alert(`correct ${ans}.it took you ${attempt} attempts`)
+            running=false
+        }
+    }
+}*/
+const text=document.getElementById("text")
+const tofahren=document.getElementById("tofahren")
+const tocelsius=document.getElementById("tocelsius")
+const result=document.getElementById("result")
+let temp
+function convert(){
+    if(tofahren.checked){
+        temp=Number(text.value)
+        temp=temp*9/5+32
+        result.textContent= temp.toFixed() + "F"
+    }
+    else if(tocelsius.checked){
+        temp=Number(text.value)
+        temp=(temp-32)*(5/9)
+        result.textContent= temp.toFixed() + "c"
+
+    }
+    else{
+        result.textContent="select a unit"
+    }
+
 }

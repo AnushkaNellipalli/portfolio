@@ -8,10 +8,16 @@
     <link rel="icon" href="favicon.ico">
 </head>
 <boddy>
-    <label for="">enter your age</label><br>
-    <input type="text" id="mytext"><br>
-    <button type="submit" id="mysubmit">submit</button>
-    <h1 id="result"></h1>
+    <form action="">
+        <h1>Temperature coverter</h1>
+        <input type="number" id="text" value="0"><br>
+        <input type="radio" id="tofahren" name="unit">
+        <label for="tofahren">celsius ➡️ fahrenheit</label><br>
+        <input type="radio" id="tocelsius" name="unit">
+        <label for="tocelsius">fahrenheit ➡️ celsius</label><br>
+        <button type="button" onclick="convert()">submit</button>
+        <p id="result"></p>
+    </form>
 
     <script src="index.js"></script>
     
