@@ -256,14 +256,14 @@ while(running){
         }
         else if(guess>ans){
             window.alert("too high try again")
-        }
+       / }
         else{
             window.alert(`correct ${ans}.it took you ${attempt} attempts`)
             running=false
         }
     }
 }*/
-const text=document.getElementById("text")
+/*const text=document.getElementById("text")
 const tofahren=document.getElementById("tofahren")
 const tocelsius=document.getElementById("tocelsius")
 const result=document.getElementById("result")
@@ -278,10 +278,89 @@ function convert(){
         temp=Number(text.value)
         temp=(temp-32)*(5/9)
         result.textContent= temp.toFixed() + "c"
-
     }
     else{
         result.textContent="select a unit"
     }
+}*/
+//password generator
+/*function generatepass(plength,iLowerCase,iUpperCase,inumber,isymbol){
+     const lcasechar="khrsfbkmhdbdfm nebdmj"
+     const ucasechar="BVJSDHBFMKHSEDKFCN"
+     const numchars="7868456937598"
+     const symbolchar="%$%^&&@@!$^"
+     let allow=""
+     let password=""
+     allow+=iLowerCase?lcasechar:""
+     allow+=iUpperCase?ucasechar:""
+     allow+=inumber?numchars:""
+     allow+=isymbol?symbolchar:""
+     console.log(allow)
+     if(plength<=0){
+        return(`password length must be least 1`)
+     }
+    return ""
 
 }
+const plength=0
+const iLowerCase=false
+const iUpperCase=false
+const inumber=true
+const isymbol=true
+const password=generatepass(plength,iLowerCase,iUpperCase,inumber,isymbol)
+console.log(`generate password: ${password}`)*/
+/*sum(page,1,2)
+function sum(callback,x,y){
+    let result =x+y
+    callback(result)
+}
+function display(reset){
+    console.log(result)
+}
+function page(result){
+    document.getElementById("myh1").textContent=result
+}*/
+/*let num=[1,2,3,4,5]
+num.forEach(display)
+function display(element){
+    console.log(element)
+}*/
+/*const pi=3.14
+const rad
+const circum
+document.getElementById("mybutton").onclick=function(){
+    rad=document.getElementById("mytext").value
+    circum=2*pi*rad
+    document.getElementById("myh3").textContent=circum+"cm"
+}*/
+/*function hello(){
+    console.log("hello")
+}
+setTimeout(hello,3000)*/
+/*const hello=() =>console.log("helo")
+hello()*/
+/*let fruits=["apple","orange","banana"]
+let m=[...fruits]
+console.log(m)*/
+/*let time;
+function startTimer(){
+    time=setTimeout(()=>window.alert("Hello"),3000)
+    console.log("starter")
+}
+function clearTimer(){
+    clearTimeout(time)
+    console.log("cleard")
+}*/
+function updateclock(){
+    const now=new Date()
+    let hours=now.getHours().toString().padStart(2,0)
+    const maridin=hours>=12?"PM":"AM"
+    hours=hours%12||12
+    hours=hours.toString().padStart(2,0)
+    const minutes=now.getMinutes().toString().padStart(2,0)
+    const seconds=now.getSeconds().toString().padStart(2,0)
+    const timestring=`${hours}:${minutes}:${seconds} ${maridin}`
+    document.getElementById("clockc").textContent=timestring
+}
+updateclock()
+setInterval(updateclock,1000)
