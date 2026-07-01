@@ -351,7 +351,7 @@ function clearTimer(){
     clearTimeout(time)
     console.log("cleard")
 }*/
-function updateclock(){
+/*function updateclock(){
     const now=new Date()
     let hours=now.getHours().toString().padStart(2,0)
     const maridin=hours>=12?"PM":"AM"
@@ -363,4 +363,49 @@ function updateclock(){
     document.getElementById("clockc").textContent=timestring
 }
 updateclock()
-setInterval(updateclock,1000)
+setInterval(updateclock,1000)*/
+const display=document.getElementById("display")
+let timer=null
+let startTime=0
+let elapsed=0
+let running=false
+function start(){
+    if(!running){
+        startTime=Date.now()-elapsed
+        timer=setInterval(update,10)
+        running=true
+    }
+
+}
+function stop(){
+    if(running){
+        clearInterval(timer)
+        elapsed=Date.now()-startTime
+        running=false
+    }
+
+}
+function reset(){
+
+    clearInterval(timer)
+    startTime=0
+    elapsed=0
+    running=false
+    display.textContent="00:00:00:00"
+
+}
+function update(){
+    const current=Date.now()
+    elapsed=current-startTime
+    let hours=Math.floor( elapsed/(1000*60*60))
+    let minutes=Math.floor( elapsed/(1000*60)%60)
+    let seconds=Math.floor( elapsed/1000%60)
+    let milliseconds=Math.floor( elapsed%1000/10)
+    hours=String(hours).padStart(2,"0")
+    minutes=String(minutes).padStart(2,"0")
+    seconds=String(seconds).padStart(2,"0")
+    milliseconds=String(milliseconds).padStart(2,"0")
+
+    display.textContent=`${hours}:${minutes}:${seconds}:${milliseconds}`
+
+}
