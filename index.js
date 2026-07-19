@@ -364,7 +364,8 @@ function clearTimer(){
 }
 updateclock()
 setInterval(updateclock,1000)*/
-const display=document.getElementById("display")
+//stopwatch
+/*const display=document.getElementById("display")
 let timer=null
 let startTime=0
 let elapsed=0
@@ -408,4 +409,250 @@ function update(){
 
     display.textContent=`${hours}:${minutes}:${seconds}:${milliseconds}`
 
+}*/
+/*import { pi,getcircum,getarea,getvolume } from "./mathutile.js";
+console.log(pi)
+const circum=getcircum(10)
+const area=getarea(10)
+const volume=getvolume(10)
+console.log(circum.toFixed(2))
+console.log(area.toFixed(2))
+console.log(volume.toFixed(2))*/
+//calculator
+/*const display=document.getElementById("display")
+function appendToDisplay(input){
+    display.value +=input
+
+}
+function clearDisplay(){
+    display.value= ""
+
+}
+function calculate(){
+    try{
+        display.value=eval(display.value)
+    }
+    catch(error){
+        display.value="error"
+    }
+    
+
+}*/
+/*const u=""
+const welcomea=document.getElementById("welcomea")
+welcomea.textContent+=u===""?'Guest':u*/
+/*function hello(callback){
+    console.log("hello")
+    callback();
+}
+function goodbye(){
+    console.log("good bye")
+}
+hello(goodbye)*/
+/*function sum(callback,x,y){
+    let result=x+y
+    callback(result)
+}
+function displayconsole(result){
+    console.log(result)
+}
+sum(displayconsole,2,3)*/
+/*function great(name,callback){
+    console.log("hello " + name)
+    callback()
+}
+function say(){
+    console.log("good morning!")
+}
+great("alice " , say)*/
+/*const fruits=["apple","banana","orange"]
+fruits.forEach(function(fruit){
+    console.log(fruit)
+})*/
+/*const nums=[10,20,30]
+nums.forEach(num=>{
+    console.log(num)
+})*/
+/*const nums=[1,2,3,4]
+const double=nums.map(function(num){
+    return num*2
+})
+console.log(double)*/
+/*let nums=[1,2,3,4,5,6]
+let even=nums.filter(iseven)
+console.log(even)
+function iseven(element){
+    return element%2==0
+}*/
+/*const price=[20,30,40,50]
+const total=price.reduce(sum)
+console.log(total)
+function sum(accumulator,element){
+    return accumulator+element
+}*/
+/*const hello=()=> console.log("hello")
+hello()*/
+/*const num=[1,2,3,4,5,6]
+const total=num.reduce((accumulator,Element)=>accumulator+Element)
+console.log(total)*/
+/*const person1={
+    fname:"spongbob",
+    lastname:"alice",
+    age:30,
+    student:true,
+    sayhello:function(){console.log("hi i am spongbob")}
+
+}
+console.log(person1.fname)
+person1.sayhello()*/
+const startscreen=document.getElementById("start-screen")
+const quizscreen=document.getElementById("quiz-screen")
+const resultscreen=document.getElementById("result-screen")
+const Startbtn=document.getElementById("Start-btn")
+const questiontext=document.getElementById("question-text")
+const answercontainer=document.getElementById("answer-container")
+const currentequestionspan=document.getElementById("currente-question")
+const totalquestionspan=document.getElementById("total-question")
+const scorespan=document.getElementById("score")
+const finalscorespan=document.getElementById("final-score")
+const maxscorespan=document.getElementById("max-score")
+const resultmessage=document.getElementById("result-message")
+const restartbtn=document.getElementById("restart-btn")
+const progress=document.getElementById("progress")
+const quizquestions=[
+    {
+        question:"What is the capital of france?",
+        answers:[
+            {text:"London", correct:false},
+            {text:"Berlin",correct:false},
+            {text:"paris",correct:true},
+            {text: "madrid",correct:false}
+        ],
+    },
+    {
+        question:"which planet is known as the red planet?",
+        answers:[
+            {text:"venus",correct:false},
+            {text:"mars",correct:true},
+            {text:"jupiter",correct:false},
+            {text:"saturn",correct:false},
+        ],
+    },
+    {
+        question:"what is the largest ocean in the world?",
+        answers:[
+            {text:"atlantic ocean", correct:false},
+            {text:"indian ocean",correct:false},
+            {text:"arctic ocean",correct:false},
+            {text:"pacific ocean",correct:true},
+        ],
+    },
+    {
+        question:"which is not programing language?",
+        answers:[
+            {text:"java",correct:false},
+            {text:"python",correct:false},
+            {text:"banana",correct:true},
+            {text:"c",correct:false},
+        ],
+    },
+    {
+        question:"what is the chemical symbol for gold?",
+        answers:[
+            {text:"go",correct:false},
+            {text:"gd",correct:false},
+            {text:"Au",correct:true},
+            {text:"ag",correct:false},
+        ],
+    },
+];
+let currentquestionindex=0;
+let score=0
+let answerdisabled=false
+totalquestionspan.textContent=quizquestions.length
+maxscorespan.textContent=quizquestions.length
+Startbtn.addEventListener("click",startquiz)
+restartbtn.addEventListener("click",restartquiz)
+function startquiz(){
+    currentquestionindex=0
+    score=0
+    scorespan.textContent=0
+    startscreen.classList.remove("active")
+    quizscreen.classList.add("active")
+    showquestion()
+}
+function showquestion(){
+    answerdisabled=false
+
+    const currentequestion=quizquestions[currentquestionindex]
+
+    currentequestionspan.textContent =currentquestionindex+1
+
+    const progresspercent=(currentquestionindex/quizquestions.length)*100
+
+    progress.style.width=progresspercent+"%"
+
+    questiontext.textContent=currentequestion.question
+
+    answercontainer.innerHTML=""
+
+    currentequestion.answers.forEach((answers)=>{
+        const button=document.createElement("button")
+        button.textContent=answers.text
+        button.classList.add("answer-btn")
+        button.dataset.correct=answers.correct
+        button.addEventListener("click",selectanswer)
+        answercontainer.appendChild(button)
+    })
+}
+function selectanswer(event){
+    if(answerdisabled) return
+    answerdisabled=true
+    const selectedbutton=event.target
+    const iscorrect=selectedbutton.dataset.correct==="true"
+    Array.from(answercontainer.children).forEach((button)=>{
+        if(button.dataset.correct==="true"){
+            button.classList.add("correct")
+
+        }else if(button===selectedbutton){
+            button.classList.add("incorrect")
+        }
+    })
+    if(iscorrect){
+        score++
+        scorespan.textContent=score
+        
+    }
+    setTimeout(()=>{
+        currentquestionindex++
+        if(currentquestionindex<quizquestions.length){
+            showquestion()
+        }else{
+            showresults()
+        }
+    },1000)
+}
+function showresults(){
+    quizscreen.classList.remove("active")
+    resultscreen.classList.add("active")
+
+    finalscorespan.textContent=score
+
+    const percentage=(score/quizquestions.length)*100
+
+    if(percentage===100){
+        resultmessage.textContent="perfect your genius!"
+    }else if(percentage>=80){
+        resultmessage.textContent="great job! you know your stuff"
+    }else if(percentage>=60){
+        resultmessage.textContent="good effort keep learning"
+    }else if(percentage>=40){
+        resultmessage.textContent="not bad try again to improve"
+    }else{
+        resultmessage.textContent="keep studieng you will get better"
+    }
+}
+function restartquiz(){
+    resultscreen.classList.remove("active")
+    startquiz()
 }

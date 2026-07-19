@@ -117,7 +117,8 @@ button:hover{
     backdrop-filter: blur(5px);
     background-color: rgba(128, 128, 128, 0.434);
 }*/
-button{
+/*stopwatch*/
+/*button{
     font-size: 30px;
     transition: background-color 0.5s ease;
     font-size: 1.5rem;
@@ -141,7 +142,7 @@ body{
 #myh1{
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgba(203, 191, 191, 0.575);
+    color: black;
     text-align: center;
     width: 700px;
 }
@@ -191,5 +192,211 @@ body{
 }
 #reset:hover{
     background-color: rgb(92, 92, 210);
+}*/
+/*calculator
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;
+}
+#calculator{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(80, 74, 74);
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
+}
+#display{
+    width: 100%;
+    padding: 20px;
+    font-size: 4rem;
+    text-align: left;
+    border: none;
+    background-color:#aea6a6 ;
 }
 
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    padding: 25px;
+}
+button{
+    width: 100px;
+    height: 80px;
+    border-radius: 50px;
+    border: none;
+    background-color: #aea6a6;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #c0b9b9;
+}
+button:active{
+    background-color:#a4a0a0 ;
+}
+.operator-btn{
+    background-color: orange;
+}
+.operator-btn:hover{
+    background-color: rgb(235, 167, 40);
+}
+.operator-btn:active{
+    background-color: rgb(230, 155, 16);
+
+}*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(247, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgb(142, 139, 139);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+.screen{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+}
+.screen.active{
+    display: block;
+}
+#start-screen h1{
+    color: orange;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+#start-screen p{
+    color:rgb(116, 110, 110);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+.quiz-header{
+    margin-bottom: 2rem;
+
+}
+#question-text{
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.4rem;
+}
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 10px;
+}
+.answer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.answer-btn{
+    background-color:white;
+    color: black;
+    border: 2px solid rgb(135, 128, 128);
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+
+}
+.answer-btn:hover{
+    background-color:rgb(249, 246, 246);
+    border-color: rgb(123, 114, 114);
+}
+.answer-btn.correct{
+    background-color: rgb(194, 241, 194);
+    border-color:rgb(195, 232, 195);
+    color:rgb(230, 236, 230);
+}
+.answer-btn.incorrect{
+    background-color:rgb(247, 86, 86);
+    border-color:rgb(240, 72, 72);
+    color: rgb(237, 169, 169);
+}
+.progress-bar{
+    height: 10px;
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.progress{
+    height: 100%;
+    background-color: orange;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+#result-screen h1{
+    color: orange;
+    margin-bottom: 30px;
+
+}
+.result-info{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.result-info p{
+    font-size: 1.2rem;
+    color: rgb(101, 95, 95);
+    margin-bottom: 1rem;
+
+}
+button{
+    background-color: orange;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+button:hover{
+    background-color: rgb(243, 180, 64);
+}
+@media(max-width:500px){
+    .screen{
+        padding: 1rem;
+    }
+    #start-screen h1{
+        font-size: 2rem;
+    }
+    #question-text{
+        font-size: 1.3rem;
+    }
+    .answer-btn{
+        padding: 12px;
+    }
+    button{
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
